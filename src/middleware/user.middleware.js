@@ -3,7 +3,7 @@ const booleanReturn = { boolean: true };
 const nameLength = (displayName) => {
   if (displayName.length < 8) {
     return {
-      data: { message: 'displayName length must be at least 8 characters long' },
+      data: { message: '"displayName" length must be at least 8 characters long' },
       status: 400,
       boolean: false,
     };
@@ -15,7 +15,7 @@ const emailRegex = (email) => {
   const emaiCheck = regex.test(email);
   if (!emaiCheck) {
     return { 
-      data: { message: 'email must be a valid email' },
+      data: { message: '"email" must be a valid email' },
       status: 400,
       boolean: false,
     };
@@ -25,7 +25,7 @@ const emailRegex = (email) => {
 const passwordLength = (password) => {
   if (password.length < 6) {
     return {
-      data: { message: 'password length must be at least 6 characters long' },
+      data: { message: '"password" length must be at least 6 characters long' },
       status: 400,
       boolean: false,
     };
@@ -41,11 +41,11 @@ const insertMiddleware = async (req, res, next) => {
   }
   const emailValidation = emailRegex(email);
   if (emailValidation.boolean === false) {
-    return res.status(emailValidation.status).send(nameValidation.data);
+    return res.status(emailValidation.status).send(emailValidation.data);
   }
   const passLength = passwordLength(password);
   if (passLength.boolean === false) {
-    return res.status(passLength.status).send(nameValidation.data);
+    return res.status(passLength.status).send(passLength.data);
   }
   next();
 };

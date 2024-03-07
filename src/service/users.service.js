@@ -14,7 +14,7 @@ const insert = async (displayName, email, password, image) => {
   }
   
   const token = jwt.create({ email });
-  return { data: { token }, status: 200 };
+  return { data: { token }, status: 201 };
 };
 
 module.exports = {
