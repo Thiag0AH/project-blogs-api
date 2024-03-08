@@ -18,10 +18,10 @@ const authorization = async (req, res, next) => {
     if (user.boolean === true) {
       return res.status(401).json({ message: 'Expired or invalid token' });
     }
+    next();
   } catch (error) {
     return res.status(401).json({ message: 'Expired or invalid token' });
   }
-  next();
 };
 
 module.exports = {
