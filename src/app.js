@@ -21,6 +21,7 @@ app.post('/user', userMiddleware.insertMiddleware, userController.insert);
 
 app.get('/user', authorization, userController.selectAll);
 
+app.get('/user/:id', authorization, userController.selectById);
 // É importante exportar a constante `app`,
 // para que possa ser utilizada pelo arquivo `src/server.js`
 module.exports = app;

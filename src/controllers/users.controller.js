@@ -11,7 +11,14 @@ const selectAll = async (req, res) => {
   res.status(status).send(data);
 };
 
+const selectById = async (req, res) => {
+  const { id } = req.params;
+  const { status, data } = await userService.selectById(id);
+  res.status(status).send(data);
+};
+
 module.exports = {
   insert,
   selectAll,
+  selectById,
 };
