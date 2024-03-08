@@ -8,6 +8,12 @@ const insert = async (name) => {
   return { data, status: 201 };
 };
 
+const selectAll = async () => {
+  const data = await Category.findAll();
+  return { data, status: 200 };
+};
+
 module.exports = {
   insert,
+  selectAll,
 };
