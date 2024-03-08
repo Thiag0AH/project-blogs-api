@@ -17,6 +17,22 @@ const insert = async (displayName, email, password, image) => {
   return { data: { token }, status: 201 };
 };
 
+const selectAll = async () => {
+  const data = [];
+  const users = await User.findAll();
+  for (let index = 0; index < users.length; index += 1) {
+    const { id, displayName, email, image } = users[index];
+    data.push({
+      id,
+      displayName,
+      email,
+      image,
+    });
+  }
+  return { data, status: 200 };
+};
+
 module.exports = {
   insert,
+  selectAll,
 };

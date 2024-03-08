@@ -16,7 +16,7 @@ const login = async (email, password) => {
       status: 400,
     };
   }
-  const token = jwt.create({ email });
+  const token = jwt.create({ email: user.email });
   return { data: { token }, status: 200 };
 };
 
