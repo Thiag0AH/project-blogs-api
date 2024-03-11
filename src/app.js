@@ -2,7 +2,9 @@ const express = require('express');
 const loginController = require('./controllers/login.controller');
 const userController = require('./controllers/users.controller');
 const categoryController = require('./controllers/category.controller');
+const postController = require('./controllers/post.controller');
 const userMiddleware = require('./middleware/user.middleware');
+const postMiddleware = require('./middleware/posts.Middleware');
 const { authorization } = require('./middleware/JWT.validate');
 // ...
 
@@ -31,6 +33,8 @@ app.post(
 );
 
 app.get('/categories', authorization, categoryController.selectAll);
+
+app.post('/post', authorization, postMiddleware.insertValidation, postController.insert);
 // É importante exportar a constante `app`,
 // para que possa ser utilizada pelo arquivo `src/server.js`
 module.exports = app;
