@@ -17,7 +17,24 @@ const selectAll = async (req, res) => {
   res.status(status).send(data);
 };
 
+const selectById = async (req, res) => {
+  const { id } = req.params;
+  const { status, data } = await postService.selectById(id);
+  res.status(status).send(data);
+};
+
+const update = async (req, res) => {
+  const { id } = req.params;
+  const { title, content } = req.body;
+  const bearerToken = req.header('Authorization');
+  const token = extractToken(bearerToken);
+  const { status, data } = await postService.update(token, id, { title, content });
+  res.status(status).send(data);
+};
+
 module.exports = {
   insert,
   selectAll,
+  selectById,
+  update,
 };

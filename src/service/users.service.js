@@ -23,17 +23,13 @@ const selectAll = async () => {
 };
 
 const selectById = async (id) => {
-  const user = await User.findOne({ where: { id } });
-  if (!user) {
+  const data = await User.findOne({ 
+    where: { id },
+    attributes: ['id', 'displayName', 'email', 'image'], 
+  });
+  if (!data) {
     return { data: { message: 'User does not exist' }, status: 404 };
   }
-  const { displayName, email, image } = user;
-  const data = {
-    id: user.id,
-    displayName,
-    email,
-    image,
-  };
   return { data, status: 200 };
 };
 

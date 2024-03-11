@@ -37,6 +37,10 @@ app.get('/categories', authorization, categoryController.selectAll);
 app.post('/post', authorization, postMiddleware.insertValidation, postController.insert);
 
 app.get('/post', authorization, postController.selectAll);
+
+app.get('/post/:id', authorization, postController.selectById);
+
+app.put('/post/:id', authorization, postMiddleware.updateValidation, postController.update);
 // É importante exportar a constante `app`,
 // para que possa ser utilizada pelo arquivo `src/server.js`
 module.exports = app;
