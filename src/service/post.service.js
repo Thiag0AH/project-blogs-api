@@ -30,10 +30,7 @@ const selectAll = async () => {
 };
 
 const selectById = async (id) => {
-  const data = await BlogPost.findOne({ 
-    where: { id },
-    include,
-  });
+  const data = await BlogPost.findOne({ where: { id }, include });
   if (!data) {
     return { data: { message: 'Post does not exist' }, status: 404 };
   }
@@ -42,10 +39,7 @@ const selectById = async (id) => {
 
 const update = async (token, id, { title, content }) => {
   const logId = await userValidation(token);
-  const data = await BlogPost.findOne({ 
-    where: { id },
-    include,
-  });
+  const data = await BlogPost.findOne({ where: { id }, include });
   if (data.userId !== logId) {
     return { data: { message: 'Unauthorized user' }, status: 401 };
   }
