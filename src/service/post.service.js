@@ -1,4 +1,4 @@
-const { BlogPost, User } = require('../models');
+const { BlogPost, User, Category } = require('../models');
 const jwtUtils = require('../utils/jwt.util');
 const postValidation = require('./validations/post.vallidation');
 const postCategories = require('./post_categories.service');
@@ -19,6 +19,21 @@ const insert = async (title, content, categoryIds, token) => {
   return { data, status: 201 };
 };
 
+const selectAll = async () => {
+  const data = await BlogPost.findAll({
+    include: [{ 
+      model: User,
+      as: 'user',
+      attributes: ['id', 'displayName', 'email', 'image'] }, 
+    {
+      model: Category,
+      as: 'categories',
+    }],
+  });
+  return { data, status: 200 };
+};
+
 module.exports = {
-  insert,  
+  insert,
+  selectAll,
 };

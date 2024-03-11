@@ -12,6 +12,12 @@ const insert = async (req, res) => {
   res.status(status).send(data);
 };
 
+const selectAll = async (req, res) => {
+  const { status, data } = await postService.selectAll();
+  res.status(status).send(data);
+};
+
 module.exports = {
   insert,
+  selectAll,
 };
