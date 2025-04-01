@@ -20,12 +20,8 @@ Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua cr
 
 ## Instalação <a name='instalação'></a>
 
-Rode os comandos:
+:construction: README em construção ! :construction:
 
-```bash
-    npm install
-    npm run dev
-```
 ## Descrição <a name='descrição'></a>
 
 Esse projeto e uma API, feito com `Ǹode.js` e usando o pacote `Sequelize` para fazer um `CRUD` de posts de um blog, incluindo logins e usuarios; esse projeto e parte do plano de ensino de Desenvovimento Web da [Trybe](https://www.betrybe.com/formacao-desenvolvimento-web).
