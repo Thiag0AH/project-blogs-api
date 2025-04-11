@@ -8,7 +8,7 @@ Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua cr
 - quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
 - quais arquivos/pastas foram desenvolvidos pela Trybe.
 -->
-# Projeto Starwars planet-search
+# Projeto Starwars blogs-api
 
 ## Sumário
 
@@ -24,7 +24,7 @@ Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua cr
 
 ## Descrição <a name='descrição'></a>
 
-Esse projeto e uma API, feito com `Ǹode.js` e usando o pacote `Sequelize` para fazer um `CRUD` de posts de um blog, incluindo logins e usuarios; esse projeto e parte do plano de ensino de Desenvovimento Web da [Trybe](https://www.betrybe.com/formacao-desenvolvimento-web).
+Esse projeto e uma API, feito com `Ǹode.js` e usando o pacote `Sequelize` para fazer um `CRUD` de posts de um blog, incluindo logins, criação de categorias de posts e criação de usuarios e posts; esse projeto é parte do plano de ensino de Desenvovimento Web da [Trybe](https://www.betrybe.com/formacao-desenvolvimento-web).
 
 ## Desenvolvimento <a name='desenvolvimento'></a>
 
